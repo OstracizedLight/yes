@@ -11,7 +11,7 @@ connections[#connections+1] = game:GetService("RunService").RenderStepped:Connec
 			sethiddenproperty(v,"MaxSimulationRadius",0)
 		end
 	endr
-	setsimulationradius(math.huge)
+	sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",99999999999)
 end)
 function SendNotification(s)
 	game.StarterGui:SetCore("SendNotification",{Title="Plusgiant5's Reanimation V2",Text=s})
@@ -1160,4 +1160,5 @@ oldi = hookmetamethod(game,"__index",function(self,i)
 	return oldi(self,i)
 end)
 SendNotification("Done. Type \";re\" or \"/e ;re\" to respawn")
+hum:ChangeState(Enum.HumanoidStateType.Physics)
 wait(4)
