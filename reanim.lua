@@ -10,7 +10,7 @@ connections[#connections+1] = game:GetService("RunService").RenderStepped:Connec
 			sethiddenproperty(v,"SimulationRadius",0)
 			sethiddenproperty(v,"MaxSimulationRadius",0)
 		end
-	endr
+	end
 	sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",99999999999)
 end)
 function SendNotification(s)
