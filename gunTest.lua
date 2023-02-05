@@ -2,7 +2,7 @@ _G.e = _G.e and _G.e + 1 or 0
 wait()
 local frame = 0
 local good = _G.e
-local plr = game.Players.LocalPlayer
+local plr = game:GetService("Players").LocalPlayer
 local char = plr.Character
 local hum = char.Humanoid
 local torso = char.Torso
@@ -132,7 +132,7 @@ end
 gun.Transparency = reanimating and 1 or 0
 bullet.Transparency = reanimating and 1 or 0
 local gunatt = reanimating and _G:Get("Meshes/CRL4Accessory")
-local bulletatt = reanimating and _G:Get("Left Leg")
+local bulletatt = reanimating and _G:Get("HumanoidRootPart")
 local hrpatt = reanimating and _G:Get("HumanoidRootPart")
 mainloop = rstepped:Connect(function()
 	if _G.e ~= good or not char or not char.Parent then
@@ -251,7 +251,7 @@ if reanimating then
 	gunatt.Orientation = Vector3.new(0,0,-40)
 	gunatt.Parent = gun
 	pcall(function()
-		_G:Block("Left Leg")
+		_G:Block("HumanoidRootPart")
 	end)
 	bulletatt.Position = Vector3.new(-.75,-1.1,0)
 	bulletatt.Orientation = Vector3.new(0,0,0)
